@@ -1,6 +1,4 @@
 @import "base/global";
 @import "base/variables";
-
-h1 {
-    color: $main-color;
-}
+@import "blocks/buttons";
+@import "blocks/promo";
