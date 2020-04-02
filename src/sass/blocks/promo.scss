@@ -2,6 +2,71 @@
     min-height: 650px;
     padding-top: 21px;
     background: url(../../img/main-bg.jpg) center (center/cover) no-repeat;
+
+    &__container {
+        padding-top: 90px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    &__phrase {
+        text-align: right;
+        color: $white;
+        margin-bottom: 70px;
+    }
+
+    &__title {
+        font-size: 3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        font-weight: 500;
+    }
+
+    &__adv {
+        display: flex;
+        justify-content: space-around;
+        width: 430px;
+        margin-bottom: 70px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: $white;
+        font-weight: 500;
+
+
+        img {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        span {
+            margin-top: 20px;
+            color: $white;
+            font-weight: 500;
+            font-size: 1.14rem;
+
+            a {
+                color: inherit;
+                text-transform: uppercase;
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
 .header {
