@@ -1,0 +1,39 @@
+.advantage {
+    background-color: #f6f6f6;
+    padding: 70px 0 80px;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        width: 270px;
+        text-align: center;
+    }
+
+    &__icon {
+        margin-bottom: 45px;
+    }
+
+    &__name {
+        font-weight: 700;
+        font-size: 1.35rem;
+        margin-bottom: 27px;
+    }
+
+    &__text {
+        font-weight: 300;
+
+    }
+
+    &__link {
+        color: $main-color;
+        text-transform: uppercase;
+        text-decoration: underline;
+
+        &:hover {
+            color: $main-color;
+        }
+    }
+}
