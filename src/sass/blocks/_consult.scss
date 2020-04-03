@@ -1,0 +1,15 @@
+.consult {
+    min-height: 680px;
+    padding-top: 100px;
+    background: url(../../img/consult-bg.jpg) center (center/cover) no-repeat;
+
+    &__inner {
+        width: 800px;
+    }
+
+    &__form-title {
+        font-weight: 500;
+        font-size: 1.42rem;
+        color: #ffffff;
+    }
+}
