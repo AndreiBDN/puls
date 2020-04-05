@@ -1,0 +1,157 @@
+.catalog {
+    padding-bottom: 70px;
+
+    &__tabs {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__tab {
+        width: 200px;
+        height: 50px;
+        border: 1px solid $border-color;
+        margin: 0 10px;
+        transform: skewX(-27deg);
+        text-align: center;
+        line-height: 48px;
+        cursor: pointer;
+
+        &-name {
+            transform: skewX(27deg);
+            font-weight: 500;
+            font-size: 1.29rem;
+            text-transform: uppercase;
+            color: $light_text-color;
+        }
+
+        &_active {
+            background-color: $main-color;
+            border: none;
+            color: $white;
+
+            .catalog__tab-name {
+                color: $white;
+            }
+        }
+
+
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 60px;
+    }
+}
+
+.product {
+
+
+    &__item {
+        position: relative;
+        width: 300px;
+        min-height: 440px;
+        padding: 20px;
+        border: 1px solid $border-color;
+        text-align: center;
+
+        &_front {
+            display: block;
+
+            &_hide {
+                display: none;
+            }
+        }
+
+        .hr {
+            position: absolute;
+            bottom: 88px;
+            display: block;
+            width: calc(100% - 40px);
+            height: 1px;
+            border: none;
+            background-color: $border-color;
+            // margin: 20px 0 88px;
+
+        }
+    }
+
+    &__photo {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+
+    }
+
+    &__name {
+        margin-top: 20px;
+        font-weight: 700;
+        font-size: 1.14rem;
+    }
+
+    &__link {
+        display: block;
+        margin-top: 18px;
+        color: $main-color;
+        text-transform: uppercase;
+        font-weight: 500;
+        text-decoration: underline;
+
+        &:hover {
+            color: $main-color;
+        }
+    }
+
+    &__footer {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 20px;
+        display: flex;
+        text-align: left;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__price_old {
+        color: $dark_text-color;
+        font-weight: 300;
+        text-decoration: line-through;
+    }
+
+    &__price_new {
+        font-weight: 700;
+        font-size: 1.43rem;
+    }
+
+    &__info {
+        display: none;
+
+
+
+        &_active {
+            display: block;
+        }
+
+
+    }
+
+    &__info-inner {
+        text-align: left;
+        padding-left: 20px;
+
+        li {
+            color: $main-color;
+            margin-bottom: 20px;
+
+            span {
+                color: $black;
+                font-size: 1rem;
+                font-weight: 300;
+            }
+        }
+    }
+
+
+}
