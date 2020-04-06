@@ -47,27 +47,74 @@
 .product {
 
 
-    &__item {
+    &-item {
         position: relative;
+
         width: 300px;
         min-height: 440px;
         padding: 20px;
         border: 1px solid $border-color;
         text-align: center;
+        overflow: hidden;
 
-        &_front {
-            display: block;
+        &__front {
+            width: 100%;
+            margin-right: 20px;
+            position: relative;
+            transform: translateX(0%);
+            transition: .3s;
 
-            &_hide {
-                display: none;
+            &_active {
+                transform: translateX(calc(-100% - 20px));
+            }
+        }
+
+        &__wrapper {
+            position: relative;
+            height: 330px;
+            display: flex;
+            width: calc(200% + 40px);
+        }
+
+        &__info {
+            width: 100%;
+            margin-left: 20px;
+            position: relative;
+            transition: .3s;
+
+            &_active {
+                transform: translateX(calc(-100% - 40px));
+            }
+
+            &-inner {
+                text-align: left;
+                padding-left: 20px;
+                margin-bottom: 0;
+                list-style: none;
+
+                li {
+                    position: relative;
+                    font-weight: 300;
+                    color: #555555;
+                    margin-bottom: 20px;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        left: -20px;
+                        top: 6px;
+                        width: 5px;
+                        height: 5px;
+                        background-color: $main-color;
+                    }
+                }
             }
         }
 
         .hr {
-            position: absolute;
-            bottom: 88px;
             display: block;
-            width: calc(100% - 40px);
+            width: 100%;
+            margin: 20px 0;
             height: 1px;
             border: none;
             background-color: $border-color;
@@ -90,12 +137,29 @@
     }
 
     &__link {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
         display: block;
         margin-top: 18px;
         color: $main-color;
         text-transform: uppercase;
         font-weight: 500;
         text-decoration: underline;
+
+        &_back {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            margin-top: 18px;
+            color: $main-color;
+            text-transform: uppercase;
+            font-weight: 500;
+            text-decoration: underline;
+        }
 
         &:hover {
             color: $main-color;
@@ -104,10 +168,10 @@
 
     &__footer {
         width: 100%;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        padding: 20px;
+        // position: absolute;
+        // bottom: 0;
+        // left: 0;
+        // padding: 20px;
         display: flex;
         text-align: left;
         justify-content: space-between;
@@ -125,33 +189,7 @@
         font-size: 1.43rem;
     }
 
-    &__info {
-        display: none;
 
-
-
-        &_active {
-            display: block;
-        }
-
-
-    }
-
-    &__info-inner {
-        text-align: left;
-        padding-left: 20px;
-
-        li {
-            color: $main-color;
-            margin-bottom: 20px;
-
-            span {
-                color: $black;
-                font-size: 1rem;
-                font-weight: 300;
-            }
-        }
-    }
 
 
 }
