@@ -17,12 +17,14 @@
     }
 
     &__title {
+        color: inherit;
         font-size: 3rem;
         font-weight: 700;
         text-transform: uppercase;
     }
 
     &__subtitle {
+        color: inherit;
         text-transform: uppercase;
         font-size: 1.7rem;
         font-weight: 500;
@@ -93,6 +95,7 @@
             display: block;
             font-size: 1.3rem;
             font-weight: 700;
+            color: $white;
         }
     }
 
