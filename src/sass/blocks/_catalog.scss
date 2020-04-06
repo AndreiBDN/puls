@@ -15,6 +15,7 @@
         text-align: center;
         line-height: 48px;
         cursor: pointer;
+        transition: .5s;
 
         &-name {
             transform: skewX(27deg);
@@ -28,6 +29,7 @@
             background-color: $main-color;
             border: none;
             color: $white;
+            box-shadow: 0 0 15px $main-color;
 
             .catalog__tab-name {
                 color: $white;
@@ -38,9 +40,14 @@
     }
 
     &__wrapper {
-        display: flex;
+        display: none;
         flex-wrap: wrap;
         margin-top: 60px;
+        justify-content: space-between;
+
+        &_active {
+            display: flex;
+        }
     }
 }
 
@@ -56,6 +63,7 @@
         border: 1px solid $border-color;
         text-align: center;
         overflow: hidden;
+        margin-bottom: 20px;
 
         &__front {
             width: 100%;
