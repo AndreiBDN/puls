@@ -1,0 +1,47 @@
+.feedback {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__photo {
+        width: 17.9%;
+
+        img {
+            max-width: 100%;
+            border-radius: 100%;
+        }
+    }
+
+    &__content {
+        width: 75%;
+    }
+
+    &__author {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    &__count {
+        font-weight: 300;
+        color: #646464;
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        font-size: 1.14rem;
+    }
+}

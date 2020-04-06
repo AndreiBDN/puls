@@ -15,6 +15,8 @@ document.querySelector('.slider__button_next').onclick = function () {
     slider.goTo('next');
 };
 
+
+
 // product item
 function activationCard(item) {
     let link = document.querySelectorAll(item);
