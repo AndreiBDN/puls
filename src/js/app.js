@@ -69,3 +69,43 @@ function changeTabs(tabName, catalogName) {
     }
 }
 changeTabs('catalog__tab', 'catalog__wrapper');
+
+// MODALS
+
+
+function openModal(a, b) {
+    let consultButton = document.querySelectorAll(a);
+    for (let i of consultButton) {
+        i.addEventListener('click', function () {
+            if (a == '.btn_small') {
+                let productName = i.parentElement.parentElement.querySelector('.product__name').textContent;
+                document.querySelector("#order .modal__dscr").textContent = productName;
+            }
+            document.querySelector('.modal').classList.add('modal_active');
+            document.querySelector(b).classList.add('modal__item_active');
+        })
+    }
+}
+
+function closeAll() {
+    document.querySelector('.modal').classList.remove('modal_active');
+    document.querySelector('.modal__item_active').classList.remove('modal__item_active');
+}
+
+function closeModal() {
+    let closeBtn = document.querySelectorAll('.modal__close');
+    for (let i of closeBtn) {
+        i.addEventListener('click', closeAll)
+    }
+    let closeWindow = document.querySelector('.modal');
+    closeWindow.addEventListener('click', closeAll);
+    let itemActive = document.querySelectorAll('.modal__item');
+    for (let i of itemActive) {
+        i.addEventListener('click', function (e) {
+            e.stopPropagation();
+        })
+    }
+}
+closeModal();
+openModal('[data-modal=consult]', '#consult');
+openModal('.btn_small', '#order');
