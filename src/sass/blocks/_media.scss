@@ -138,6 +138,7 @@
             margin: 60px auto 60px;
         }
 
+
         &__contact {
             margin: 0 auto 25px;
             text-align: center;
@@ -236,8 +237,17 @@
         &__item {
             flex-direction: row;
             max-width: 100%;
-            justify-content: space-around;
+            justify-content: center;
             align-items: flex-start;
+            text-align: left;
+
+            &:nth-child(2) {
+                margin-left: -12px;
+            }
+
+            img {
+                margin-right: 20px;
+            }
 
         }
 

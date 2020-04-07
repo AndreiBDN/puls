@@ -43,7 +43,7 @@
         display: none;
         flex-wrap: wrap;
         margin-top: 60px;
-        justify-content: space-around;
+        justify-content: center;
 
         &_active {
             display: flex;
@@ -60,10 +60,11 @@
         width: 300px;
         min-height: 440px;
         padding: 20px;
+
         border: 1px solid $border-color;
         text-align: center;
         overflow: hidden;
-        margin-bottom: 20px;
+        margin: 0 8px 20px;
 
         &__front {
             width: 100%;
