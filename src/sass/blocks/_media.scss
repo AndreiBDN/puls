@@ -135,7 +135,7 @@
         }
 
         &__adv {
-            margin: 0 auto 30px;
+            margin: 60px auto 60px;
         }
 
         &__contact {
@@ -208,6 +208,127 @@
         }
 
         &__info {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .promo {
+        height: 100vh;
+
+        &__title {
+            margin-top: 25px;
+            font-size: 1.5rem;
+        }
+
+        &__subtitle {
+            font-size: 1.1rem;
+        }
+
+        &__adv {
+            flex-direction: column;
+            max-width: 100%;
+            margin: 0 auto 10px;
+        }
+
+        &__item {
+            flex-direction: row;
+            max-width: 100%;
+            justify-content: space-around;
+            align-items: flex-start;
+
+        }
+
+        &__contact {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+    }
+
+    .header {
+        flex-direction: column;
+
+        &__title {
+            display: none;
+        }
+
+        &__logo {
+            width: 80%;
+            margin-bottom: 15px;
+        }
+    }
+
+    .btn_main {
+        width: 100%;
+
+    }
+
+    .title {
+        font-size: 1.5rem;
+        margin-bottom: 22px;
+
+        &_left {
+            font-size: 1.1rem;
+        }
+    }
+
+    .advantage {
+        padding: 20px 0;
+
+        &__inner {
+            padding: 0 10px;
+        }
+
+        &__item {
+            max-width: 100%;
+        }
+
+        &__icon {
+            margin-bottom: 0;
+        }
+
+        &__name {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        &__text {
+            font-size: .9rem;
+        }
+    }
+
+    .consult {
+        &__form-title {
+            font-size: 1rem;
+        }
+
+        .feed-form {
+            max-width: 100%;
+        }
+    }
+
+    .catalog {
+        &__tabs {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__tab {
+            width: 80%;
+            margin-bottom: 15px;
+        }
+    }
+
+    .feedback {
+        &__photo {
+            width: 46%;
+            margin-bottom: 9px;
+        }
+
+        &__content {
             width: 100%;
         }
     }
