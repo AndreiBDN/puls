@@ -120,6 +120,26 @@ function scrollTo() {
         })
     }
 }
+
+function showUpArrow() {
+    const upArrow = document.querySelector('.arrow__up');
+    const seeHeight = window.innerHeight;
+
+    window.addEventListener('scroll', function () {
+
+        const scrollTop = window.pageYOffset;
+        if (scrollTop > seeHeight) {
+            upArrow.style.display = 'block';
+        } else {
+            upArrow.style.display = 'none';
+        }
+    })
+}
+
+
+
+
+showUpArrow();
 scrollTo();
 closeModal();
 openModal('[data-modal=consult]', '#consult');
