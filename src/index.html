@@ -49,7 +49,7 @@
                 </div>
                 <div class="promo__contact">
                     <button data-modal="consult" class="btn btn_main">заказать консультакцию</button><span>
-                        или <a href="#">перейти в каталог</a></span>
+                        или <a href="#catalog">перейти в каталог</a></span>
                 </div>
 
             </div>
@@ -104,7 +104,7 @@
                     Просто заполните форму заявки <br>
                     и мы перезвоним вам в течении 10 минут
                 </div>
-                <form action="#" class="feed-form">
+                <form action="mail/mail.php" method="POST" class="feed-form">
 
                     <input name="name" type="text" placeholder="Ваше имя">
                     <input name="phone" type="tel" placeholder="Ваш номер телефона">
@@ -133,7 +133,7 @@
             </div>
         </div>
     </section>
-    <section class="catalog">
+    <section id="catalog" class="catalog">
         <div class="container">
             <h2 class="title">каталог пульсометров</h2>
             <div class="catalog__tabs">
@@ -549,7 +549,7 @@
                 в ближайшее время!</div>
         </div>
     </div>
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="js/tiny-slider.js"></script>
     <script src="js/app.js"></script>
 </body>

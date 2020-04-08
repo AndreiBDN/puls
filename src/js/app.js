@@ -106,6 +106,21 @@ function closeModal() {
         })
     }
 }
+
+function scrollTo() {
+    let links = document.querySelectorAll("a[href^='#']");
+    for (let link of links) {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            let anchor = this.hash;
+            document.querySelector(anchor).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+        })
+    }
+}
+scrollTo();
 closeModal();
 openModal('[data-modal=consult]', '#consult');
 openModal('.btn_small', '#order');
