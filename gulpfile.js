@@ -39,7 +39,7 @@ gulp.task('minhtml', () => {
         .pipe(htmlmin({
             collapseWhitespace: true
         }))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist/'));
 });
 gulp.task('minimg', () => {
     gulp.src('src/img/*')
@@ -61,11 +61,7 @@ gulp.task('font', () => {
     gulp.src('src/fonts/*')
         .pipe(gulp.dest('dist/fonts'))
 });
-gulp.task('mail', () => {
-    gulp.src('src/mail')
-        .pipe(imagemin())
-        .pipe(gulp.dest('dist/mail'))
-});
+
 
 
 
@@ -73,10 +69,11 @@ gulp.task('mail', () => {
 
 
 gulp.task('watch', function () {
-    gulp.watch('src/sass/**/*.+(scss|sass)', gulp.parallel('styles'));
+    gulp.watch('src/sass/**/*.+(scss|sass|css)', gulp.parallel('styles'));
+    gulp.watch('src/*.html').on('change', gulp.parallel('minhtml'));
 
 });
 
 
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'minhtml', 'minimg', 'icons', 'script', 'font', 'mail'));
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'minhtml', 'minimg', 'icons', 'script', 'font'));

@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
     <link rel="stylesheet" href="css/style.min.css">
     <title>Puls</title>
 </head>
@@ -514,7 +513,7 @@
             <div class="modal__close">&times;</div>
             <div class="modal__title">Просто заполните форму заявки</div>
             <div class="modal__dscr">и мы перезвоним вам в течении 10 минут</div>
-            <form action="#" class="feed-form">
+            <form action="mail/mail.php" method="POST" class="feed-form">
 
                 <input name="name" type="text" placeholder="Ваше имя">
                 <input name="phone" type="tel" placeholder="Ваш номер телефона">
@@ -528,7 +527,7 @@
             <div class="modal__title">Ваш заказ:</div>
             <div class="modal__dscr">Пульсометр Polar FT1</div>
             <div>
-                <form action="#" class="feed-form">
+                <form action="mail/mail.php" method="POST" class="feed-form">
 
                     <input name="name" type="text" placeholder="Ваше имя">
                     <input name="phone" type="tel" placeholder="Ваш номер телефона">
@@ -547,7 +546,6 @@
         </div>
     </div>
     <a href="#header" class="arrow__up"><img src="icons/up.svg" alt="up arrow"></a>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="js/tiny-slider.js"></script>
     <script src="js/app.js"></script>
 </body>
