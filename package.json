@@ -27,6 +27,8 @@
     "gulp-sourcemap": "^1.0.1"
   },
   "dependencies": {
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
     "tiny-slider": "^2.9.2"
   }
 }

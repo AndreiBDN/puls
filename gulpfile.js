@@ -4,18 +4,21 @@ const sass = require('gulp-sass');
 const rename = require("gulp-rename");
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
+const htmlmin = require('gulp-htmlmin');
+const imagemin = require('gulp-imagemin');
+
 
 // Static server
 gulp.task('server', function () {
     browserSync({
         server: {
-            baseDir: "src"
+            baseDir: "dist"
         }
     });
     gulp.watch('src/*.html').on('change', browserSync.reload);
 });
 gulp.task('styles', function () {
-    return gulp.src('src/sass/**/*.+(scss|sass)')
+    return gulp.src('src/sass/**/*.+(scss|sass|css)')
         .pipe(sass({
             outputStyle: 'compressed'
         }).on('error', sass.logError))
@@ -27,16 +30,53 @@ gulp.task('styles', function () {
         .pipe(cleanCSS({
             compatibility: 'ie8'
         }))
-        .pipe(gulp.dest('src/css'))
+        .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream());
 });
+
+gulp.task('minhtml', () => {
+    return gulp.src('src/*.html')
+        .pipe(htmlmin({
+            collapseWhitespace: true
+        }))
+        .pipe(gulp.dest('dist'));
+});
+gulp.task('minimg', () => {
+    gulp.src('src/img/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/img'))
+});
+
+gulp.task('icons', () => {
+    gulp.src('src/icons/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/icons'))
+});
+gulp.task('script', () => {
+    gulp.src('src/js/**/*.js')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/js'))
+});
+gulp.task('font', () => {
+    gulp.src('src/fonts/*')
+        .pipe(gulp.dest('dist/fonts'))
+});
+gulp.task('mail', () => {
+    gulp.src('src/mail')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/mail'))
+});
+
+
+
+
 
 
 gulp.task('watch', function () {
     gulp.watch('src/sass/**/*.+(scss|sass)', gulp.parallel('styles'));
 
-})
+});
 
 
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles'));
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'minhtml', 'minimg', 'icons', 'script', 'font', 'mail'));
