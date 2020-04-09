@@ -6,6 +6,8 @@ const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
+var jsmin = require('gulp-jsmin');
+
 
 
 // Static server
@@ -52,14 +54,21 @@ gulp.task('icons', () => {
         .pipe(imagemin())
         .pipe(gulp.dest('dist/icons'))
 });
-gulp.task('script', () => {
-    gulp.src('src/js/**/*.js')
-        .pipe(imagemin())
-        .pipe(gulp.dest('dist/js'))
-});
+// gulp.task('script', () => {
+//     gulp.src('src/js/**/*.js')
+//         .pipe(gulp.dest('dist/js'))
+// });
 gulp.task('font', () => {
     gulp.src('src/fonts/*')
         .pipe(gulp.dest('dist/fonts'))
+});
+gulp.task('minjs', function () {
+    gulp.src('src/js/**/*.js')
+        .pipe(jsmin())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest('dist/js/'));
 });
 
 
@@ -76,4 +85,4 @@ gulp.task('watch', function () {
 
 
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'minhtml', 'minimg', 'icons', 'script', 'font'));
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'minhtml', 'minimg', 'icons', 'minjs', 'font'));
